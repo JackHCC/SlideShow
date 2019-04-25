@@ -27,3 +27,33 @@ for file in glob.glob("res\\*.jpg"):  # 图片所在的目录
 ```
 ### 照片墙展示
 + 导入库
+```
+import sys
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import *
+```
++ Qt窗口基本创建
+```
+app = QApplication(sys.argv)
+
+win = QWidget()
+win.resize(760, 540)
+win.move(0, 0)
+layout=QGridLayout(win)
+
+positionSet()
+win.setWindowTitle('GUI')
+win.show()
+```
++ 背景图设置
+```
+b=QLabel(win)
+b.setPixmap(QPixmap("bg.jpg"))
+b.setGeometry(0,0,820,640)
+```
++ 布局函数
+```
+def positionSet():
+```
+### 结果展示
+![show](result.jpg)
